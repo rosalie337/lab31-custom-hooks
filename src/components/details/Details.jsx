@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { getCharacterDetail } from '../services/fetchAPI';
+import { useState, useEffect } from 'react';
+import { getCharacterDetail } from '../../services/fetchApi';
 
 function Details({ match }) {
 
