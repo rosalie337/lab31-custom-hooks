@@ -8,9 +8,7 @@ export default function App() {
   return (
     <Router>
       <Route path="/" component={Header} />
-
       <Route exact path="/" component={AllCharacters} />
-
       <Route path="/:character" component={Detail} />
     </Router>
   )

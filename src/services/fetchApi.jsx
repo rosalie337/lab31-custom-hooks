@@ -4,8 +4,12 @@ export const getCharacters = () => {
       .then(characters => characters.map(character => ({
         name: character.name,
         url: character.photoUrl,
-        allies: character.allies,
-        enemies: character.enemies,
-        affiliation: character.affiliation
       })));
+  };
+
+  export const getCharacterDetail = (id) => {
+    // eslint-disable-next-line max-len
+    return fetch(`https://last-airbender-api.herokuapp.com/api/v1/characters/${id}`)
+      .then(res => res.json());
+  
   };

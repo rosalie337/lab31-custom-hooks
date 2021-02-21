@@ -1,41 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { getCharacterDetail } from '../services/fetchAPI';
 
-function Details({name, url, allies, enemies}) {
+function Details({ match }) {
 
-    const allyList = allies.map((ally, i) => {
-        <li key={i}>{ally}</li>
+    const [character, setCharacter] = useState({});
+  const [loading, setLoading] = useState(true);
 
-    }) 
-    
-    const enemyList = enemies.map((enemies, i) => {
-        <li key={i}>{enemy}</li>
-    })
+  useEffect(() => {
+    getCharacterDetail(match.params.id)
+      .then(newCharacter => {
+        setCharacter(newCharacter);
+        setLoading(false);
+      });
+  }, []);
+  
+  if(loading) return <h1>Loading...</h1>;
 
-    return (
-        <>
-            <figure>
-                <img src={url} />
-                <figcaption>{name}</figcaption>  
-            </figure>
-            { (allyList > 0) &&
-            <div>
-                <h2>Allies</h2>
-                <ul>{allyList}</ul>
-            </div>
-            }
-            <h2>Enemies</h2>
-            <ul>{enemyList}</ul>
-        </>
-    );
-}
+  return (
+    <>
+      <Details {...character} />
+    </>
+  );
+};
 
 Details.propTypes = {
-    name: PropTypes.string.isRequired,
-    url: PropTypes.string.isRequired,
-    allies: PropTypes.array,
-    enemies: PropTypes.array
-}
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired
+};
 
 export default Details;
 
