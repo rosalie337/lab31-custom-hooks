@@ -18,10 +18,14 @@ function Details({name, url, allies, enemies}) {
                 <img src={url} />
                 <figcaption>{name}</figcaption>  
             </figure>
-            <h2>Allies</h2>
+            { (allyList > 0) &&
+            <div>
+                <h2>Allies</h2>
                 <ul>{allyList}</ul>
+            </div>
+            }
             <h2>Enemies</h2>
-                <ul>{enemyList}</ul>
+            <ul>{enemyList}</ul>
         </>
     );
 }
