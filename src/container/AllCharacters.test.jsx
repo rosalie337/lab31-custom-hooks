@@ -18,7 +18,7 @@ describe('AllCharacters container', () => {
   afterAll(() => server.close());
 
   it('displays a loading screen then a list of characters', async () => {
-    render(<MemoryRouter><AllCharacters /></MemoryRouter>);
+    render(<MemoryRouter>(...<AllCharacters />)</MemoryRouter>);
 
     screen.getByText('Loading...');
 
