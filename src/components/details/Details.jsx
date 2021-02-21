@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useState, useEffect } from 'react';
 import { getCharacterDetail } from '../../services/fetchApi';
+import DetailsTemplate from '../details/DetailsTemplate';
 
 function Details({ match }) {
 
@@ -20,7 +21,7 @@ function Details({ match }) {
 
   return (
     <>
-      <Details {...character} />
+      <DetailsTemplate {...character} />
     </>
   );
 };
