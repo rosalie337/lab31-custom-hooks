@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route } from 'react-router-dom';
+import { Router, Router } from 'react-router-dom';
 import AllCharacters from '../../container/AllCharacters'
 import Header from '../header/Header';
 import Detail from '../details/Details';

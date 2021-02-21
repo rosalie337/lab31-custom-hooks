@@ -1,17 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Details(props) {
+function Details({name, url}) {
     return (
-        <div>
-            <h1>Hola from the Details component!</h1>
-        </div>
-    )
+        <>
+            <figure>
+                <img src={url} />
+                <figcaption>{name}</figcaption>  
+            </figure>
+        </>
+    );
 }
 
 Details.propTypes = {
-
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired
 }
 
-export default Details
+export default Details;
 
