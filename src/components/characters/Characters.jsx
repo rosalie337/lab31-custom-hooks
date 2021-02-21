@@ -1,15 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function Characters(props) {
+function Characters({name, url}) {
     return (
-        <div>
-            <h1>Hola from Characters Component!</h1>
-        </div>
+        <>
+            <figure>
+                <img src={url} />
+                <figcaption>{name}</figcaption>  
+            </figure>
+        </>
     )
 }
 
 Characters.propTypes = {
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
 
 }
 
