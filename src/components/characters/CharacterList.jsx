@@ -1,21 +1,30 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
-import Characters from './Characters'
+import Characters from './Character'
 
 function CharacterList({ characters }) {
 
-  const characterElements = characters.map(character => {
-        <li key={character._id} >
-            <Characters name={character.name} url={character.url}/>
-        </li>;
-  });
-  
-  return (
-        <ul>
-            {characterElements}
-        </ul>
+    const characterElements = characters.map(character => {
+        if(character.url) {
+
+        return (
+            <Link to={`/character/${character.id}`} 
+            key={character.id}
+            style={{ textDecoration: 'none', color: 'green' }}>
+            <li style={{ listStyleType: 'none' }}>
+                <Character name={character.name} url={character.url}/>
+            </li>
+            </Link>
+        );
+        }
+
+    return;
     
-  )};
+    });
+
+    return <ul data-testid="characters" >{characterElements}</ul>;
+}
 
 CharacterList.propTypes = {
     characters: PropTypes.arrayOf(
@@ -26,5 +35,4 @@ CharacterList.propTypes = {
       )
 }
 
-export default CharacterList
-
+export default CharacterList;
