@@ -1,18 +1,24 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react'
 import CharacterList from '../components/characters/CharacterList';
+import { getCharacters } from '../services/fetchAPI';
 
-export default class AllCharacters extends Component {
-    static propTypes = {
-        prop: PropTypes
-    }
+const AllCharacters = () => {
 
-    render() {
-        return (
-            <div>
-                <h1>Hola from All Characters container!</h1>
-                <CharacterList />
-            </div>
-        )
-    }
-}
+    const [loading, setLoading] = useState(true);
+    const [characters, setCharacters] = useState([]);
+
+    useEffect(() => {
+        getCharacters()
+          .then(newCharacters => {
+            setCharacters(newCharacters);
+            setLoading(false);
+          });
+      }, []);
+    
+    if(loading) return <h1>Loading...</h1>;
+
+    return <CharacterList characters={characters} />;
+  
+};
+
+export default AllCharacters;
