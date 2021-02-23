@@ -6,6 +6,7 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import AllCharacters from './AllCharacters';
 import charactersAPI from '../components/data/Characters.json';
+import { NewTheme } from '../hooks/theme';
 
 const server = setupServer(
   rest.get('https://last-airbender-api.herokuapp.com/api/v1/characters', (req, res, ctx) => {
@@ -18,7 +19,7 @@ describe('AllCharacters container', () => {
   afterAll(() => server.close());
 
   it('displays a loading screen then a list of characters', async () => {
-    render(<MemoryRouter>(...<AllCharacters />)</MemoryRouter>);
+    render(<NewTheme><MemoryRouter>(...<AllCharacters />)</MemoryRouter></NewTheme>);
 
     screen.getByText('Loading...');
 
