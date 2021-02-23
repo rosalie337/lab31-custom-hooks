@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders App 1`] = `
+<DocumentFragment>
+  <a
+    href="/"
+    style="text-decoration: none; color: green;"
+  >
+    <p
+      style="text-align: center; font-size: 35px; margin: 10px;"
+    >
+      Last Airbender
+    </p>
+  </a>
+  <h1>
+    Loading...
+  </h1>
+</DocumentFragment>
+`;
