@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 
 export const CharacterTheme = createContext(null);
 
