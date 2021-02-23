@@ -20,12 +20,12 @@ describe('Details container', () => {
   it('displays a loading screen then a character', async() => {
     render(<MemoryRouter>
       <Details
-        match={{ params: { id: '5cf5679a915ecad153ab68d1' } }}  />
+        match={{ params: { id: '5da237699734fdcb7bef8f5c' } }}  />
     </MemoryRouter>);
 
     screen.getByText('Loading...');
 
-    const figCaption = await screen.findByTestId('name');
+    const figCaption = await screen.findByTestId('id');
 
     return waitFor(() => {
       expect(figCaption).not.toBeEmptyDOMElement();

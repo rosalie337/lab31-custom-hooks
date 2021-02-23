@@ -16,7 +16,7 @@ function DetailsTemplate({ name, image, allies, enemies }) {
     <>
       <figure>
         <img src={image} />
-        <figcaption data-testid="name" style={{ fontSize: '25px' }}>{name}</figcaption>
+        <figcaption data-testid="id" style={{ fontSize: '25px' }}>{name}</figcaption>
       </figure>
       
       { (allyElements?.length > 0)
