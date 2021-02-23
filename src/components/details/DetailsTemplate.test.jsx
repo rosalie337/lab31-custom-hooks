@@ -7,8 +7,8 @@ describe('DetailsTemplate component', () => {
   afterEach(() => cleanup());
   it('renders DetailsTemplate', () => {
     const { asFragment } = render(<DetailsTemplate
-      name="Baatar Jr."
-      photoUrl="https://vignette.wikia.nocookie.net/avatar/images/4/45/Baatar_Jr..png/revision/latest?cb=20150409193510"
+      name="Arnold Shortman"
+      photoUrl="https://vignette.wikia.nocookie.net/heyarnold/images/f/f5/Arnold.png/revision/latest?cb=20181027162333"
     />);    
 
     return waitFor(() => {expect(asFragment()).toMatchSnapshot()});

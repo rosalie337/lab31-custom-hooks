@@ -8,7 +8,7 @@ import Details from './Details';
 import Character from '../data/Character.json';
 
 const server = setupServer(
-  rest.get('https://last-airbender-api.herokuapp.com/api/v1/characters/', (req, res, ctx) => {
+  rest.get('https://hey-arnold-api.herokuapp.com/api/v1/characters', (req, res, ctx) => {
     return res(ctx.json(Character));
   })
 );

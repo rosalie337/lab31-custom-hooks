@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function DetailsTemplate({ name, photoUrl, allies, enemies }) {
+function DetailsTemplate({ name, image, allies, enemies }) {
 
   const allyElements = allies?.map((ally, i) => {
     return <li key={i} style={{ fontWeight: 'normal' }}>{ally}</li>;
@@ -15,7 +15,7 @@ function DetailsTemplate({ name, photoUrl, allies, enemies }) {
   return (
     <>
       <figure>
-        <img src={photoUrl} />
+        <img src={image} />
         <figcaption data-testid="name" style={{ fontSize: '25px' }}>{name}</figcaption>
       </figure>
       
