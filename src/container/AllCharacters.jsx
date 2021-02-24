@@ -8,7 +8,7 @@ const AllCharacters = () => {
     
     if(loading) return <h1>Loading...</h1>;
 
-    return <CharacterList characters={characters} />;
+    return <CharacterList data-testid="characters" characters={characters} />;
   
 };
 
