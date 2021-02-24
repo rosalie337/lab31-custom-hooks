@@ -6,7 +6,8 @@ import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import AllCharacters from './AllCharacters';
 import charactersAPI from '../components/data/Characters.json';
-import { NewTheme } from '../hooks/theme';
+import { NewTheme } from '../hooks/Theme';
+
 
 const server = setupServer(
   rest.get('https://last-airbender-api.herokuapp.com/api/v1/characters', (req, res, ctx) => {
