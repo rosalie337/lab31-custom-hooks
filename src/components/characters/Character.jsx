@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useTheme } from '../../hooks/Theme'
 
 function Characters({name, url}) {
+    const { theme } = useTheme()
+
     return (
-        <div className={themeStyle} >
+        <div>
             <figure>
                 <img src={url} />
                 <figcaption>{name}</figcaption>  

@@ -2,11 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import Character from './Character'
-import { useTheme } from '../../hooks/CharacterHooks';
+import { useTheme } from '../../hooks/Theme';
+import styles from './Character.css';
 
 function CharacterList({ characters }) {
 
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme } = useTheme()
+    
     const handleChange = ({ target }) => {
       if(target.checked){
         setTheme('light');

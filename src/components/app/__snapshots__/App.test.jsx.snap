@@ -2,16 +2,35 @@
 
 exports[`App component renders App 1`] = `
 <DocumentFragment>
-  <a
-    href="/"
-    style="text-decoration: none; color: green;"
+  <div
+    class="dark"
   >
-    <p
-      style="text-align: center; font-size: 35px; margin: 10px;"
+    <a
+      href="/"
+      style="text-decoration: none; color: black;"
     >
-      Last Airbender
-    </p>
-  </a>
+      <p
+        style="text-align: center; font-size: 35px; margin: 10px;"
+      >
+        Hey Arnold!
+      </p>
+    </a>
+    <br />
+    <a
+      href="/characters"
+    >
+      All Characters
+    </a>
+    <br />
+    <a
+      href="/"
+    >
+      Home
+    </a>
+    <input
+      type="checkbox"
+    />
+  </div>
   <h1>
     Loading...
   </h1>

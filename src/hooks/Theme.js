@@ -5,19 +5,24 @@ export const CharacterTheme = createContext(null);
 
 export const NewTheme = ({ children }) => {
     const [theme, setTheme] = useState('dark');
-
+    
+    const toggle = () => {
+        if (theme === 'dark')setTheme('light');
+        else setTheme('dark')
+    }
     return (
-        <CharacterTheme.Provider value = {{ theme, setTheme }}>
+        <CharacterTheme.Provider value = {{ theme, toggle }}>
             {children}
         </CharacterTheme.Provider>
     );
 };
 
+
 export const useTheme = () => {
-    const { theme, setTheme } = useContext(CharacterTheme);
+    const { theme, toggle } = useContext(CharacterTheme);
     return {
         theme,
-        setTheme
+        toggle
     }
 }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react';
 import { getCharacterDetail, getCharacters } from '../services/fetchApi'
+import loading from '../loading/Loading';
 
 export const useCharacters = () => {
     const [loading, setLoading] = useState(true);

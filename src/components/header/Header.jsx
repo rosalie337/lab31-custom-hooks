@@ -4,20 +4,21 @@ import { useTheme } from '../../hooks/Theme';
 import styles from './Header.css'
 
 export default function Header() {
-    const { theme, setTheme } = useTheme();
+    const { theme, toggle } = useTheme()
 
-    const handleChange = ({ target }) => {
+    console.log(theme);
 
-        if(target.checked){
-            setTheme('light');
-        } else setTheme('dark');
-    };
+    // const handleChange = ({ target }) => {
 
-    const themeStyle = theme === 'dark' ? styles.dark : styles.light;
+    //     if(target.checked){
+    //         setTheme('dark');
+    //     } else setTheme('light');
+    // };
+
+    // const themeStyle = theme => 'dark' ? styles.dark : styles.light;
 
     return (
-        <div className={themeStyle} >
-
+        <div className={`${styles[theme]}`} >
             <Link to={'/'} style={{ textDecoration: 'none', color: 'black' }} >
             <p style={{ textAlign: 'center', fontSize: '35px', margin: '10px' }}>
             Hey Arnold!
@@ -27,7 +28,7 @@ export default function Header() {
             <Link to="/characters">All Characters</Link>
             <br></br>
             <Link to="/">Home</Link>
-            <input type="checkbox" onChange={handleChange}></input>
+            <input type="checkbox" onChange={toggle}></input>
         </div>
     )
 }
