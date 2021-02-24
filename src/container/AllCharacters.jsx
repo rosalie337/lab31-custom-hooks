@@ -1,23 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import CharacterList from '../components/characters/CharacterList';
-import { getCharacters } from '../services/fetchApi';
+import { useCharacters } from '../hooks/CharacterHooks'
 
 const AllCharacters = () => {
 
-    const [loading, setLoading] = useState(true);
-    const [characters, setCharacters] = useState([]);
-
-    useEffect(() => {
-        getCharacters()
-          .then(newCharacters => {
-            setCharacters(newCharacters);
-            setLoading(false);
-          });
-      }, []);
+    const { loading, characters } = useCharacters()
     
     if(loading) return <h1>Loading...</h1>;
 
-    return <CharacterList characters={characters} />;
+    return <CharacterList data-testid="characters" characters={characters} />;
   
 };
 

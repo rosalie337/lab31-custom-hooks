@@ -3,14 +3,12 @@
 exports[`DetailsTemplate component renders DetailsTemplate 1`] = `
 <DocumentFragment>
   <figure>
-    <img
-      src="https://vignette.wikia.nocookie.net/avatar/images/4/45/Baatar_Jr..png/revision/latest?cb=20150409193510"
-    />
+    <img />
     <figcaption
-      data-testid="name"
+      data-testid="id"
       style="font-size: 25px;"
     >
-      Baatar Jr.
+      Arnold Shortman
     </figcaption>
   </figure>
 </DocumentFragment>

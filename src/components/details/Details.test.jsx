@@ -8,7 +8,7 @@ import Details from './Details';
 import Character from '../data/Character.json';
 
 const server = setupServer(
-  rest.get('https://last-airbender-api.herokuapp.com/api/v1/characters/', (req, res, ctx) => {
+  rest.get('https://hey-arnold-api.herokuapp.com/api/v1/characters', (req, res, ctx) => {
     return res(ctx.json(Character));
   })
 );
@@ -20,12 +20,12 @@ describe('Details container', () => {
   it('displays a loading screen then a character', async() => {
     render(<MemoryRouter>
       <Details
-        match={{ params: { id: '5cf5679a915ecad153ab68d1' } }}  />
+        match={{ params: { id: '5da237699734fdcb7bef8f5c' } }}  />
     </MemoryRouter>);
 
     screen.getByText('Loading...');
 
-    const figCaption = await screen.findByTestId('name');
+    const figCaption = await screen.findByTestId('id');
 
     return waitFor(() => {
       expect(figCaption).not.toBeEmptyDOMElement();

@@ -2,9 +2,11 @@
 
 exports[`Characters component renders Characters 1`] = `
 <DocumentFragment>
-  <figure>
-    <img />
-    <figcaption />
-  </figure>
+  <div>
+    <figure>
+      <img />
+      <figcaption />
+    </figure>
+  </div>
 </DocumentFragment>
 `;
